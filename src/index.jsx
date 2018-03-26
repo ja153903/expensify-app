@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
-import Routes from './routes'
+
+import AppRouter from './routers/AppRouter';
 
 const renderApp = (Component) => {
   ReactDOM.render(
@@ -12,11 +13,11 @@ const renderApp = (Component) => {
   );
 };
 
-renderApp(Routes);
+renderApp(AppRouter);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('./routes', () => {
-    renderApp(require('./routes').default);
+  module.hot.accept('./routers/AppRouter', () => {
+    renderApp(require('./routers/AppRouter').default);
   })
 }
