@@ -3,7 +3,11 @@
   "plugins": [
     "transform-runtime",
     "transform-decorators-legacy",
-    "transform-class-properties"
+    "transform-class-properties",
+    "transform-es2015-spread",
+    "transform-es2015-parameters",
+    "transform-es2015-destructuring",
+    "transform-object-rest-spread"
   ],
   
   "env": {

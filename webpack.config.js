@@ -18,8 +18,8 @@ module.exports = {
     'core-js/fn/promise',
     'core-js/es6/object',
     'core-js/es6/array',
-
-    './src/index.jsx', // your app's entry point
+    './src/playgrounds/redux-expensify.js'
+    //'./src/index.jsx', // your app's entry point
   ],
   devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
   output: {
