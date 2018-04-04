@@ -152,6 +152,14 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
         const textMatch = typeof text !== 'string' || expense.description.toLowerCase().includes(text.toLowerCase());
 
         return startDateMatch && endDateMatch && textMatch;
+    }).sort((a, b) => {
+        if (sortBy == 'date') {
+            return a.createdAt < b.createdAt ? 1 : -1;
+        }
+
+        if (sortBy == 'amount') {
+            return a.amount < b.amount ? 1 : -1;
+        }
     })
 }
 
@@ -172,7 +180,7 @@ store.subscribe(() => {
 const item1 = store.dispatch(addExpense({ description: 'Rent', amount: 100 }));
 const item2 = store.dispatch(addExpense({ description: 'new laptop', amount: 500000 }));
 
-store.dispatch(removeExpense({ id: item1.expense.id }));
+store.dispatch(sortByAmount());
 
 
 const demoState = {
