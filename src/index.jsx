@@ -14,15 +14,17 @@ console.log(store.getState());
 
 store.dispatch(addExpense({
   description: 'water bill',
-  amount: 350
+  amount: 350,
+  createdAt: 1231
 }));
 
 store.dispatch(addExpense({
   description: 'gas bill',
-  amount: 1200
+  amount: 1200,
+  createdAt: 1231
 }));
 
-store.dispatch(setTextFilter('water'));
+//store.dispatch(setTextFilter('water'));
 
 const state = store.getState();
 
