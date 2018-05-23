@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
-
+import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
@@ -28,6 +28,14 @@ const state = store.getState();
 
 console.log(getVisibleExpenses(state.expenses, state.filters));
 
+const jsx = (
+  <AppContainer>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
+  </AppContainer>
+);
+
 const renderApp = (Component) => {
   ReactDOM.render(
     <AppContainer>
@@ -37,7 +45,8 @@ const renderApp = (Component) => {
   );
 };
 
-renderApp(AppRouter);
+ReactDOM.render(jsx, document.getElementById('app'));
+//renderApp(jsx);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
