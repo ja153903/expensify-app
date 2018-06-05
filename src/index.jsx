@@ -24,7 +24,7 @@ store.dispatch(addExpense({
   createdAt: 1231
 }));
 
-//store.dispatch(setTextFilter('water'));
+store.dispatch(setTextFilter('water'));
 
 const state = store.getState();
 
